@@ -42,8 +42,17 @@ extern __thread Tick *_curTickPtr;
 
 } // namespace Gem5Internal
 
+namespace HMA_CYCLES_S
+{
+    extern int HMA_CYCLES;
+} // namespace HMA_CYCLES_S
+
 /// The universal simulation clock.
 inline Tick curTick() { return *Gem5Internal::_curTickPtr; }
+
+inline void incHMA_CYCLES() {HMA_CYCLES_S::HMA_CYCLES++;}
+inline int getHMA_CYCLES() {return HMA_CYCLES_S::HMA_CYCLES;}
+
 
 } // namespace gem5
 

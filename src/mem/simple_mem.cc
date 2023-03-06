@@ -111,6 +111,7 @@ SimpleMemory::recvFunctional(PacketPtr pkt)
 bool
 SimpleMemory::recvTimingReq(PacketPtr pkt)
 {
+    incHMA_CYCLES(); // To count the number of memory operations
     panic_if(pkt->cacheResponding(), "Should not see packets where cache "
              "is responding");
 

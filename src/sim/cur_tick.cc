@@ -37,4 +37,12 @@ namespace Gem5Internal
 __thread Tick *_curTickPtr;
 
 } // namespace Gem5Internal
+
+namespace HMA_CYCLES_S
+{
+
+    int HMA_CYCLES;
+
+} // namespace HMA_CYCLES_S
+
 } // namespace gem5

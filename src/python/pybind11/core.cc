@@ -279,6 +279,7 @@ pybind_init_core(py::module_ &m_native)
         .def("setClockFrequency", &setClockFrequency)
         .def("getClockFrequency", &getClockFrequency)
         .def("curTick", curTick)
+        .def("getHMA_CYCLES", getHMA_CYCLES)
         ;
 
     /* TODO: These should be read-only */

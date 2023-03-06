@@ -49,6 +49,8 @@ from m5.defines import buildEnv
 from m5.objects import *
 from m5.util import *
 
+from _m5.core import getHMA_CYCLES
+
 addToPath('../common')
 
 def getCPUClass(cpu_type):
@@ -728,6 +730,8 @@ def run(options, root, testsys, cpu_class):
 
     print('Exiting @ tick %i because %s' %
           (m5.curTick(), exit_event.getCause()))
+    print("The number of HMA_CYCLES used: ")
+    print(getHMA_CYCLES())
     if options.checkpoint_at_end:
         m5.checkpoint(joinpath(cptdir, "cpt.%d"))
 
